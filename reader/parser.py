@@ -23,8 +23,18 @@ def parse_ingredients(raw_list_of_ingredients: list):
             amount = eval(amount)
             name = str(split_item[1]).lower()
         except (NameError, SyntaxError):
-            amount = 1
-            name = str(item).lower()
+            if amount.lower() in ['un', 'une']:
+                amount = 1
+                name = str(split_item[1])
+            elif amount.lower() in ['deux']:
+                amount = 2
+                name = str(split_item[1])
+            elif amount.lower() in ['quelques']:
+                amount = 5
+                name = str(split_item[1])
+            else:
+                amount = 1
+                name = str(item).lower()
         # if amount.isnumeric():
 
         #     amount = int(amount)
@@ -126,10 +136,11 @@ def strategy01(d: str, text_list, lemma_list, pos_list, book_ref: str):
     #     jxt = str(text_list[2])
     #     name = d[d.index(text_list[3]):]  #' '.join(text_list[3:])
     # else:
-    lemma = lemma_list[1]
+    noun_index = pos_list.index('NOUN') if 'NOUN' in pos_list else 1
+    lemma = lemma_list[noun_index]
     unit = 'p'
     jxt = ''
-    name = d[d.index(text_list[1]):]
+    name = d[d.index(text_list[noun_index]):]
     # lemma = ' '.join(lemma_list[1:])
     return (unit, jxt, name, lemma, None)
 def strategy013(d: str, text_list, lemma_list, pos_list, book_ref: str):
@@ -153,6 +164,12 @@ def strategy013(d: str, text_list, lemma_list, pos_list, book_ref: str):
         unit = lemma_list[1] if lemma_list[1] in UNIT_LIST else text_list[1]
         jxt = str(text_list[2])
         name = d[d.index(text_list[3]):]  #' '.join(text_list[3:])
+    elif ' '.join(text_list[1:4]) in UNIT_LIST:
+        logger.info('found a unit %s', ' '.join(text_list[1:4]))
+        lemma = ' '.join(lemma_list[5:])
+        unit = ' '.join(text_list[1:4])
+        jxt = str(text_list[4])
+        name = d[d.index(text_list[5]):]
     else:
         lemma = lemma_list[1]
         unit = 'p'

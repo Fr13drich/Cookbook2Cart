@@ -6,7 +6,6 @@ from operator import itemgetter
 from abc import ABC, abstractmethod
 import spacy
 import pytesseract
-# from spellchecker import SpellChecker
 from PIL import Image, ImageOps, ImageEnhance
 import easyocr
 from reader import parser
@@ -348,9 +347,6 @@ class EbReader(ReaderInterface):
                 logger.info('pytesseract ingredients_stream: %s', ingredients_stream)
                 # remove first line and put the rest in one line
                 ingredients_stream = ' '.join(ingredients_stream.split(sep='\n')[1:])
-                # ingredients_stream = ingredients_stream[ingredients_stream.find('\n')+2:]
-                # put the stream in one line
-                # ingredients_stream = ingredients_stream.replace('\n', ' ')
                 # split
                 ingredient_sep_list = '+-*°«e»'
                 for sep in ingredient_sep_list:
@@ -376,6 +372,7 @@ class EbReader(ReaderInterface):
         #                            for i in ingredients_list]
         logging.info('ingredients_stream before calling parse_stream: %s', ingredients_stream)
         parsed_ingredients_list = [parser.parse_stream(i.strip())[0] for i in ingredients_list]
+        logger.info('the list: %s', parsed_ingredients_list) 
         return parsed_ingredients_list
 
 class FmReader(ReaderInterface):
@@ -477,16 +474,15 @@ class PpReader(ReaderInterface):
         pic = './tmp/img.jpg'
         df = pytesseract.image_to_data(pic, lang='fra', output_type=pytesseract.Output.DATAFRAME)
         #locate the block with the ingredients
-        ing_block_num = df.query('text.str.contains("personne", na=False) & level == 5.0')['block_num'].array[0]
+        ing_block_num = df.query('text.str.contains("personnes", na=False) & level == 5.0')['block_num'].array[0]
         ingredients_frame = df.query('level == 5.0 & block_num == @ing_block_num & text')
         for i in range(2, ingredients_frame.par_num.array[-1] + 1):
             ingredient = ingredients_frame.query('par_num == @i')['text'].array
-            
             ingredient = ' '.join(ingredient)
             ingredient = parser.parse_stream(ingredient)
             for ingredient_item in ingredient:
                 # special treatment: replace 'Un' or 'Une' by '1'
-                if ingredient_item.split()[0] in ['Un','Une']:
+                if ingredient_item.split()[0].lower() in ['un','une']:
                     ingredient_item = '1' + ingredient_item[ingredient_item.find(' '):]
                 # remove trailing dot
                 if ingredient_item[-1] == '.':

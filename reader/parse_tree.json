@@ -255,6 +255,7 @@
       }
     },
     "ADJ": {
+      "strategy": "strategy01",
       "NOUN": {
         "strategy": "strategy01",
         "ADP": {
