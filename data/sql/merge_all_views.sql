@@ -1,20 +1,35 @@
+with views as (
+SELECT * FROM janvier UNION ALL
+SELECT * FROM fevrier UNION ALL
+SELECT * FROM mars UNION ALL
+SELECT * FROM avril UNION ALL
+SELECT * FROM mai UNION ALL
+SELECT * FROM juin UNION ALL
+SELECT * FROM juillet UNION ALL
+SELECT * FROM aout UNION ALL
+SELECT * FROM septembre
+),
+menus as (
+SELECT recipes.id as recipe_id, recipes.name as recipe_name, views.multiplier as multiplier from recipes
+JOIN views on recipes.name = views.name
+),
+
 -- Group recipes, add their ratio
-WITH menu_sum AS (
-    SELECT recipe_id, recipes.name, SUM(multiplier) AS total_multiplier
-    FROM menu
-    JOIN recipes ON menu.recipe_id = recipes.id
+menu_sum AS (
+    SELECT recipe_id, recipe_name as name, SUM(multiplier) AS total_multiplier
+    FROM menus
+    JOIN recipes ON menus.recipe_id = recipes.id
     GROUP BY recipe_id
 ),
 unit_conv AS (
     SELECT menu_sum.name AS name,
 	  CASE
 	    WHEN ingredient_entry.unit IN ('kg', 'l') THEN 1000 * ingredient_entry.amount * menu_sum.total_multiplier
-      WHEN ingredient_entry.unit IN ('cl') THEN 10 * ingredient_entry.amount * menu_sum.total_multiplier
 	    ELSE ingredient_entry.amount * menu_sum.total_multiplier
 	  END AS amount,
       CASE
 	  WHEN ingredient_entry.unit = 'kg' THEN 'g'
-	  WHEN ingredient_entry.unit IN ('l', 'cl') THEN 'ml'
+	  WHEN ingredient_entry.unit = 'l' THEN 'ml'
 	  ELSE ingredient_entry.unit
 	END AS unit,
     ingredient_entry.ingredient_id AS ingredient_id

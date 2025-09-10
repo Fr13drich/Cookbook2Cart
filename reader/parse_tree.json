@@ -66,6 +66,21 @@
             "VERB": {
               "strategy": "strategy013"
             },
+            "ADV": {
+              "ADJ": {
+                "PUNCT": {
+                  "VERB": {
+                    "NOUN": {
+                      "NUM": {
+                        "PUNCT": {
+                          "strategy": "strategy013"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
             "ADJ": {
               "PUNCT": {
                 "VERB": {

@@ -146,7 +146,7 @@ class BcReader(ReaderInterface):
                 title = box[1]
                 break
         logger.info('title: %s', title)
-        return title
+        return title.capitalize()
 
     @staticmethod
     def get_the_best_from_both(ingredients_easyocr, ingredients_tesseract):
@@ -407,7 +407,6 @@ class FmReader(ReaderInterface):
     @classmethod
     def get_ref(cls, img=None):
         tess = pytesseract.image_to_string('tmp/img.jpg', lang='fra', config='--psm 6')
-
         return 'FMp' + tess.split('\n')[-2].replace('|','').strip()
     @classmethod
     def get_ingredients(cls, img):
@@ -438,6 +437,63 @@ class FmReader(ReaderInterface):
             empty_line = False
         return ingredient_list
 
+class PpReader(ReaderInterface):
+    """Read pictures from 'Pèle pomme'."""
+    allowed_books = [config['DEFAULT']['PP_PICS']]
+
+    def __init__(self, location: str, name: str) -> None:
+        """Construct."""
+        super().__init__()
+        self.location = location
+        self.name = name
+    @classmethod
+    def read(cls, location: str, name: str):
+        """Ingest the picture."""
+        if not cls.can_read(location, name):
+            raise ValueError('Cannot parse exception.')
+        pic = cls.image_preprocessing(os.path.join(location, name))
+        img = Image.open(pic)
+        title = cls.get_title(img)
+        ref = 'PP_' + title.replace(' ', '_').replace("'", "")
+        ingredients = cls.get_ingredients(img)
+        return ref, title, parser.parse_ingredients(ingredients)
+    @classmethod
+    def get_ref(cls, img=None):
+        ref = 'PP_' + title
+        logger.info('ref: %s', ref)
+        return ref
+    @classmethod
+    def get_title(cls, img):
+        img = './tmp/img.jpg'
+        df = pytesseract.image_to_data(img, lang='fra', output_type=pytesseract.Output.DATAFRAME)
+        title = df.query('height > 200 & level == 5.0')['text'].array
+        title = ' '.join(title)
+        title = title.strip().capitalize()
+        logger.info('title: %s', title)
+        return title
+    @classmethod
+    def get_ingredients(cls, img):
+        ingredients_list = []
+        pic = './tmp/img.jpg'
+        df = pytesseract.image_to_data(pic, lang='fra', output_type=pytesseract.Output.DATAFRAME)
+        #locate the block with the ingredients
+        ing_block_num = df.query('text.str.contains("personne", na=False) & level == 5.0')['block_num'].array[0]
+        ingredients_frame = df.query('level == 5.0 & block_num == @ing_block_num & text')
+        for i in range(2, ingredients_frame.par_num.array[-1] + 1):
+            ingredient = ingredients_frame.query('par_num == @i')['text'].array
+            
+            ingredient = ' '.join(ingredient)
+            ingredient = parser.parse_stream(ingredient)
+            for ingredient_item in ingredient:
+                # special treatment: replace 'Un' or 'Une' by '1'
+                if ingredient_item.split()[0] in ['Un','Une']:
+                    ingredient_item = '1' + ingredient_item[ingredient_item.find(' '):]
+                # remove trailing dot
+                if ingredient_item[-1] == '.':
+                    ingredient_item = ingredient_item[:-1]
+                ingredients_list.append(ingredient_item)
+        return ingredients_list
+
 class Reader(ReaderInterface):
     """pick the right reader as per file location"""
     allowed_books = [config['DEFAULT']['CG_PICS'],\
@@ -459,6 +515,8 @@ class Reader(ReaderInterface):
             book_reader = EbReader
         elif 'FM' in location: #== config['DEFAULT']['EB_PICS']:
             book_reader = FmReader
+        elif 'PP' in location:
+            book_reader = PpReader
         else:
             raise ValueError('Unsupported book: ' + location)
         return book_reader.read(location=location, name=name)

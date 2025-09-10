@@ -141,8 +141,10 @@ def strategy013(d: str, text_list, lemma_list, pos_list, book_ref: str):
         other_recipe_ref = book_ref + 'p' + str(text_list[-2])
         lemma_list = lemma_list[:-5]
         d = d[0:d.index(' (')] if d.find('(') else d
-    if "PUNCT" in pos_list:
-        d= d[0:d.index(text_list[pos_list.index("PUNCT")])] #remove all after punct
+        pos_list = pos_list[:-5]
+        text_list = text_list[:-5]
+    # if "PUNCT" in pos_list:
+    #     d= d[0:d.index(text_list[pos_list.index("PUNCT")])] #remove all after punct
     #check for a unit
     if lemma_list[1] in UNIT_LIST or text_list[1] in UNIT_LIST:
         logger.info('found a unit %s', lemma_list[1]
@@ -165,6 +167,8 @@ def strategy0135(d: str, text_list, lemma_list, pos_list, book_ref: str):
         other_recipe_ref = book_ref + 'p' + str(text_list[-2])
         lemma_list = lemma_list[:-5]
         d = d[0:d.index(' (')] if d.find('(') else d
+        pos_list = pos_list[:-5]
+        text_list = text_list[:-5]
     lemma = ' '.join(lemma_list[3:5])
     unit = str(lemma_list[1])
     jxt = str(text_list[2])
@@ -242,6 +246,27 @@ def strategy_jus_dune_orange(d: str, text_list, lemma_list, _pos_list, book_ref:
     jxt = ''
     name = d[d.index(text_list[-1]):]
     return (unit, jxt, name, lemma, other_recipe_ref)
+# def noun_based_strategy(d: str, text_list, lemma_list, pos_list, book_ref: str):
+#     """A strategy based on the number of nouns in the text"""
+#     other_recipe_ref = None
+#     #check for a ref to another recipe
+#     if pos_list[-5:] == ["PUNCT", "VERB", "NOUN", "NUM", "PUNCT"]:
+#         other_recipe_ref = book_ref + 'p' + str(text_list[-2])
+#         lemma_list = lemma_list[:-5]
+#         d = d[0:d.index(' (')] if d.find('(') else d
+#         pos_list = pos_list[:-5]
+#         text_list = text_list[:-5]
+#     noun_nb = pos_list.count('NOUN')
+#     if noun_nb == 0:
+#         return ('', '', d, other_recipe_ref)
+#     elif noun_nb == 1:
+#         lemma = lemma_list[1]
+#         unit = 'p'
+#         jxt = ''
+#         name = d[d.index(text_list[1]):]
+#         return (unit, jxt, name, lemma, None)
+#     elif noun_nb == 2:
+    
 # def choose_strategy(s: str):
 #     """Return the right parsing function"""
 #     if s == "strategy01":

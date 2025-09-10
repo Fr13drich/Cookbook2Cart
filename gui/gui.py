@@ -95,7 +95,6 @@ class RecipesFrame(customtkinter.CTkFrame):
     def save_view(self, view_name='test_view'):
         """Save the current menu as a view in the database."""
         dialog = tkinter.messagebox.askokcancel(title='Save', message="Are you sure?")
-        # dialog = customtkinter.CTkInputDialog()
         if not dialog:
             print('cancelled')
             return
