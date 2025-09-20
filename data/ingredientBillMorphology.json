@@ -62,7 +62,7 @@
     "NUM NOUN PUNCT ADP NOUN ADP NOUN NOUN": "strategy0156",
     "NUM NOUN PUNCT ADP NOUN ADP PROPN": "strategy0156",
     "NUM NOUN PUNCT ADP NOUN ADP NOUN ADP PROPN": "strategy0156",
-    "NUM NOUN ADP DET NOUN": "strategy04",
+    "NUM NOUN ADP DET NOUN": "strategy_jus_dune_orange",
     "NUM PROPN PUNCT ADP NOUN ADP NOUN": "strategy0146",
     "DET NOUN ADP NUM NOUN": "strategy34",
     "NUM DET NOUN ADP NUM NOUN": "strategy34",
