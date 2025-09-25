@@ -59,7 +59,7 @@ class RecipesFrame(customtkinter.CTkFrame):
         self.master = master
         self.recipe_frame_list = []
         self.disable_button_list = []
-        self.all_recipes = cursor.execute('SELECT ref, name FROM recipes').fetchall()
+        self.all_recipes = cursor.execute('SELECT ref, name FROM recipes ORDER BY name').fetchall()
         # values=[r[1] for r in all_recipes]
         # values.sort()
         for j in range(RecipesFrame.nb_of_week):
@@ -251,9 +251,22 @@ class FilterFrame(customtkinter.CTkFrame):
                              lambda event: self.combobox_callback(self.ing_filter.get()))
         self.ing_filter.bind('<FocusOut>',
                              lambda event: self.combobox_callback(self.ing_filter.get()))
-        self.ing_filter_label = customtkinter.CTkLabel(self, text="Filter by ingredient:")
-        self.ing_filter_label.grid(row=0, column=0, padx=10, pady=(10, 0), sticky="nw")
-        self.ing_filter.grid(row=0, column=1, padx=10, pady=(10, 0), sticky="ne")
+        self.ing_filter_label = customtkinter.CTkLabel(self, text="Filter on ingredient:")
+        self.recipe_filter = customtkinter.CTkComboBox(self, values=self.fetch_recipes(),\
+                                    width=200, hover=True, command=self.recipe_filter_callback)
+
+        self.recipe_filter.set('')
+        self.recipe_filter.bind('<<ComboboxSelected>>',
+                             lambda event: self.recipe_filter_callback(self.recipe_filter.get()))
+        self.recipe_filter.bind('<Return>',
+                             lambda event: self.recipe_filter_callback(self.recipe_filter.get()))
+        self.recipe_filter.bind('<FocusOut>',
+                             lambda event: self.recipe_filter_callback(self.recipe_filter.get()))
+        self.recipe_filter_label = customtkinter.CTkLabel(self, text="Filter on recipe name:")
+        self.recipe_filter_label.grid(row=0, column=0, padx=10, pady=(10, 0), sticky="nw")
+        self.recipe_filter.grid(row=0, column=1, padx=10, pady=(10, 0), sticky="ne")
+        self.ing_filter_label.grid(row=0, column=2, padx=10, pady=(10, 0), sticky="nw")
+        self.ing_filter.grid(row=0, column=3, padx=10, pady=(10, 0), sticky="ne")
 
     def combobox_callback(self, choice=''):
         """Filter the recipes based on the selected ingredient."""
@@ -265,13 +278,27 @@ class FilterFrame(customtkinter.CTkFrame):
         for sub_list_frame in self.master.recipes_frame.recipe_frame_list:
             for recipe_frame in sub_list_frame:
                 recipe_frame.recipe_picker.configure(values=filtered_recipe)
+    def recipe_filter_callback(self, choice=''):
+        """Filter the recipes based on a substring of the recipe name."""
+        cursor.execute("SELECT name FROM recipes WHERE name LIKE ?", ('%' + choice + '%',))
+        filtered_recipe = ['None'] + [r[0] for r in cursor.fetchall()]
+        print(filtered_recipe)
+        for sub_list_frame in self.master.recipes_frame.recipe_frame_list:
+            for recipe_frame in sub_list_frame:
+                recipe_frame.recipe_picker.configure(values=filtered_recipe)
 
     def fetch_ingredients(self):
         """Fetch the ingredients from the database and return them as a list."""
         cursor.execute('SELECT DISTINCT name FROM ingredients ORDER BY name')
         ingredients = cursor.fetchall()
         return [ing[0] for ing in ingredients] + ['']
-
+    
+    def fetch_recipes(self):
+        """Fetch the recipes from the database and return them as a list."""
+        cursor.execute('SELECT name FROM recipes ORDER BY name')
+        recipes = cursor.fetchall()
+        return [rec[0] for rec in recipes] + ['']
+    
 class App(customtkinter.CTk):
     """Main classe. Contains a grid of recipes, a text zone and some buttons."""
     def __init__(self):
