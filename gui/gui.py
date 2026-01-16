@@ -35,7 +35,7 @@ class RecipeFrame(customtkinter.CTkFrame):
         self.recipe_picker.bind()
         self.recipe_picker.grid(row=0, column=0, padx=10, pady=(10, 0))#, sticky="ew"
         self.ratio = customtkinter.CTkSlider(self, from_=0, to=1,\
-                        number_of_steps=4, command=self.update)
+                        number_of_steps=8, command=self.update)
         self.ratio.set(1.0)
         self.ratio.grid(row=1, column=0, padx=10, pady=(10, 0))
         self.ratio_label = customtkinter.CTkLabel(self, text='1.0')
@@ -278,6 +278,7 @@ class FilterFrame(customtkinter.CTkFrame):
         for sub_list_frame in self.master.recipes_frame.recipe_frame_list:
             for recipe_frame in sub_list_frame:
                 recipe_frame.recipe_picker.configure(values=filtered_recipe)
+                
     def recipe_filter_callback(self, choice=''):
         """Filter the recipes based on a substring of the recipe name."""
         cursor.execute("SELECT name FROM recipes WHERE name LIKE ?", ('%' + choice + '%',))

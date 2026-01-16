@@ -217,8 +217,8 @@ class BcReader(ReaderInterface):
             # pytesseract.image_to_boxes
         except ValueError:
             print('No text found')
-        ingredients_easyocr = BcReader.get_the_best_from_both(
-            ingredients_easyocr, ingredients_tesseract)
+        # ingredients_easyocr = BcReader.get_the_best_from_both(
+        #     ingredients_easyocr, ingredients_tesseract)
         # remove annotations on the bottom
         # by checking the vertical distance between lines
         distance = ingredients_easyocr[1][0][0][1] - ingredients_easyocr[0][0][0][1]
@@ -456,9 +456,7 @@ class PpReader(ReaderInterface):
         return ref, title, parser.parse_ingredients(ingredients)
     @classmethod
     def get_ref(cls, img=None):
-        ref = 'PP_' + title
-        logger.info('ref: %s', ref)
-        return ref
+        pass
     @classmethod
     def get_title(cls, img):
         img = './tmp/img.jpg'
@@ -490,6 +488,50 @@ class PpReader(ReaderInterface):
                 ingredients_list.append(ingredient_item)
         return ingredients_list
 
+class SmReader(ReaderInterface):
+    """Read pictures from 'Soup Maker'."""
+    allowed_books = [config['DEFAULT']['SM_PICS']]
+
+    def __init__(self, location: str, name: str) -> None:
+        """Construct."""
+        super().__init__()
+        self.location = location
+        self.name = name
+    @classmethod
+    def read(cls, location: str, name: str):
+        """Ingest the picture."""
+        if not cls.can_read(location, name):
+            raise ValueError('Cannot parse exception.')
+        pic = cls.image_preprocessing(os.path.join(location, name))
+        img = Image.open(pic)
+        img = img.crop((0, 0, img.width*.45, img.height))
+        img.save(pic)
+        title = cls.get_title(pic)
+        ref = 'SM_' + title.replace(' ', '_').replace("'", "")
+        ingredients = cls.get_ingredients(pic)
+        return ref, title, parser.parse_ingredients(ingredients)
+    @classmethod
+    def get_ref(cls, img=None):
+        pass
+    @classmethod
+    def get_title(cls, img):
+        # pic = './tmp/img.jpg'
+        title = reader.readtext(img, detail=0, paragraph=True, y_ths=.1)[0]
+        title = title.strip().capitalize()
+        logger.info('title: %s', title)
+        return title
+    @classmethod
+    def get_ingredients(cls, pic):
+        # pic = './tmp/ingredients.jpg'
+        ingredients_coordinates = reader.readtext(pic, detail=1,paragraph=True,y_ths=.15)[1][0]
+        img = Image.open(pic)
+        img = img.crop((ingredients_coordinates[0][0],\
+                        ingredients_coordinates[0][1],\
+                        ingredients_coordinates[2][0],\
+                        ingredients_coordinates[2][1]))
+        img.save('tmp/ingredients.jpg')
+        ingredients = reader.readtext('tmp/ingredients.jpg', detail=0, ycenter_ths=.5, width_ths=.7, height_ths=1)
+        return ingredients
 class Reader(ReaderInterface):
     """pick the right reader as per file location"""
     allowed_books = [config['DEFAULT']['CG_PICS'],\
@@ -513,6 +555,8 @@ class Reader(ReaderInterface):
             book_reader = FmReader
         elif 'PP' in location:
             book_reader = PpReader
+        elif 'SM' in location:
+            book_reader = SmReader
         else:
             raise ValueError('Unsupported book: ' + location)
         return book_reader.read(location=location, name=name)

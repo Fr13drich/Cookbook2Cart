@@ -46,9 +46,12 @@ class IngredientEntry:
         unit_mapping = {
             'cuillère à soupe': 'càs',
             'cuillère à café': 'càc',
+            'cuillères à café': 'càc',
             'cuil. à soupe': 'càs',
             'cuil. à café': 'càc',
+            'c à c': 'càc',
             'c. à s.': 'càs',
+            'c à s ': 'càs',
             'c.às': 'càs',
             'cuillères à soupe': 'càs',
             'c. à c.': 'càc',
