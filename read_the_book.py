@@ -43,19 +43,28 @@ def pics2recipe(input_dir, output_dir):
         for name in files:
             assert pathlib.PurePosixPath(name).suffix == '.jpg'
             print('Reading ' + str(name) + ' from ' + root)
-            ref, name, parsed_ingredients = Reader.read(str(pathlib.Path(root)), name)
-            logger.info('%s, %s', ref, name)
-            logger.info('%s', parsed_ingredients)
-            recipe_dict = {'ref': ref, 'name':name, 'ingredients':parsed_ingredients}
-            logger.info(recipe_dict['ref'])
-            Recipe(ref=recipe_dict['ref'],
-                    name=recipe_dict['name'],
-                    ingredients_bill=parse_ingredients_bill_dict(
-                        ingredients_bill_dict=recipe_dict['ingredients'],
-                        recipe_ref=recipe_dict['ref'])
-                    ).write_recipe_file(output_dir)
-            print('Recipe ' + str(recipe_dict['name']) + ' ' + str(recipe_dict['ref']) + ' written')
-            print('Run setup_db.py to insert the recipe into the database')
+            for ref, name, parsed_ingredients in Reader.read(str(pathlib.Path(root)), name):
+                logger.info('%s, %s', ref, name)
+                logger.info('%s', parsed_ingredients)
+                recipe_dict = {'ref': ref, 'name':name, 'ingredients':parsed_ingredients}
+                logger.info(recipe_dict['ref'])
+                recipe = Recipe(ref=recipe_dict['ref'],
+                                name=recipe_dict['name'],
+                                ingredients_bill=parse_ingredients_bill_dict(
+                                ingredients_bill_dict=recipe_dict['ingredients'],
+                                recipe_ref=recipe_dict['ref'])
+                               )#.write_recipe_file(output_dir)
+                
+                print(recipe)
+                answer = input('Write file?(y/n)')
+                if answer == 'y':
+                    recipe.write_recipe_file(output_dir)
+                    print('Recipe ' + str(recipe_dict['name']) + ' ' + str(recipe_dict['ref']) + ' written')
+                # answer = input('Rename ' + os.path.join(root, name) + 
+                #                'to' + os.path.join(root, recipe.name + '.jpg') + '?(y/n)')
+                # if answer == 'y':
+                #     os.rename(os.path.join(root, name), os.path.join(root, recipe.name + '.jpg'))
+                print('Run python.exe setup_db.py to insert the recipe into the database')
 if __name__ == '__main__':
     read_the_book_parser = make_parser()
     args = read_the_book_parser.parse_args()
