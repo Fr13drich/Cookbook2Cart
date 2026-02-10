@@ -40,10 +40,10 @@ def pics2recipe(input_dir, output_dir):
     assert pathlib.Path(input_dir).is_dir()
     assert pathlib.Path(output_dir).is_dir()
     for root, _dirs, files in os.walk(input_dir):
-        for name in files:
-            assert pathlib.PurePosixPath(name).suffix == '.jpg'
-            print('Reading ' + str(name) + ' from ' + root)
-            for ref, name, parsed_ingredients in Reader.read(str(pathlib.Path(root)), name):
+        for file in files:
+            assert pathlib.PurePosixPath(file).suffix == '.jpg'
+            print('Reading ' + str(file) + ' from ' + root)
+            for ref, name, parsed_ingredients in Reader.read(str(pathlib.Path(root)), file):
                 logger.info('%s, %s', ref, name)
                 logger.info('%s', parsed_ingredients)
                 recipe_dict = {'ref': ref, 'name':name, 'ingredients':parsed_ingredients}
@@ -56,15 +56,16 @@ def pics2recipe(input_dir, output_dir):
                                )#.write_recipe_file(output_dir)
                 
                 print(recipe)
+                print(recipe.serialize())
                 answer = input('Write file?(y/n)')
                 if answer == 'y':
                     recipe.write_recipe_file(output_dir)
-                    print('Recipe ' + str(recipe_dict['name']) + ' ' + str(recipe_dict['ref']) + ' written')
-                # answer = input('Rename ' + os.path.join(root, name) + 
-                #                'to' + os.path.join(root, recipe.name + '.jpg') + '?(y/n)')
-                # if answer == 'y':
-                #     os.rename(os.path.join(root, name), os.path.join(root, recipe.name + '.jpg'))
-                print('Run python.exe setup_db.py to insert the recipe into the database')
+                    print('Recipe ' + str(recipe_dict['name']) + ' written')
+                    print('Run python.exe setup_db.py to insert the recipe into the database')
+                answer = input('Rename ' + os.path.join(root, file) +
+                               ' to ' + os.path.join(root, recipe.ref + '.jpg') + '?(y/n)')
+                if answer == 'y':
+                    os.rename(os.path.join(root, file), os.path.join(root, recipe.ref + '.jpg'))
 if __name__ == '__main__':
     read_the_book_parser = make_parser()
     args = read_the_book_parser.parse_args()
