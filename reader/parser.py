@@ -17,7 +17,6 @@ def parse_ingredients(raw_list_of_ingredients: list):
     result = {}
     for item in raw_list_of_ingredients:
         split_item = str(item).split(maxsplit=1)
-        print(split_item)
         amount = str(split_item[0]).replace(',', '.')
         try:
             amount = eval(amount)
@@ -100,7 +99,6 @@ def parse_stream(ingredient_stream: str):
             ingredient_list.append(ingredient_stream[i:j].strip())
         else:
             ingredient_list[-1] += ' ' + ingredient_stream[i:j].strip()
-    print(ingredient_list)
     logger.info('parse_stream: strategy %s ingredient_list: %s', strategy,ingredient_list)
     return ingredient_list
 
@@ -111,8 +109,8 @@ def get_strategy(ingredient_line: str):
     doc = nlp(ingredient_line)
     cursor = root
     strategy = None
-    print([token.pos_ for token in doc])
-    print([token.lemma_ for token in doc])
+    # print([token.pos_ for token in doc])
+    # print([token.lemma_ for token in doc])
     for token in doc:
         if cursor.get(token.pos_):
             cursor = cursor[token.pos_]
@@ -217,7 +215,7 @@ def strategy0245(d: str, text_list, lemma_list, pos_list, book_ref: str):
     return (unit, jxt, name, lemma, other_recipe_ref)
 def strategy34(d: str, text_list, lemma_list, pos_list, book_ref=None):
     """Le jus de 1 citron -> 1 citron"""
-    print(pos_list)
+    # print(pos_list)
     other_recipe_ref = book_ref
     lemma = lemma_list[-1]
     unit = 'p'
@@ -226,7 +224,7 @@ def strategy34(d: str, text_list, lemma_list, pos_list, book_ref=None):
     return (unit, jxt, name, lemma, other_recipe_ref)
 def strategy0146(d: str, text_list, lemma_list, pos_list, book_ref=None):
     """'NUM', 'PROPN', 'PUNCT', 'ADP', 'NOUN', 'ADP', 'NOUN'"""
-    print(pos_list)
+    # print(pos_list)
     lemma = ' '.join(lemma_list[4:])
     name = d[d.index(text_list[4]):]
     unit = str(text_list[1])
@@ -245,7 +243,7 @@ def strategy01357(d: str, text_list, lemma_list, pos_list, book_ref=None):
         unit = lemma_list[1]
         jxt = text_list[2]
     else:
-        print(pos_list)
+        # print(pos_list)
         raise ValueError('A very specific bad thing happened.')
     return (unit, jxt, name, lemma, book_ref)
 

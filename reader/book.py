@@ -11,7 +11,7 @@ import easyocr
 from reader import parser
 config = configparser.ConfigParser()
 config.read('./config.cfg', encoding='utf-8')
-reader = easyocr.Reader(lang_list=['fr'], gpu=False)
+easyocr_reader = easyocr.Reader(lang_list=['fr'], gpu=False)
 logger = logging.getLogger(__name__)
 nlp = spacy.load("fr_core_news_md")
 
@@ -46,7 +46,7 @@ class ReaderInterface(ABC):
     @staticmethod
     def autocrop(jpg, min_size=50):
         """Crop where there is no text."""
-        results = reader.readtext(image=jpg, detail=1, paragraph=True, x_ths=2000, y_ths=.2,\
+        results = easyocr_reader.readtext(image=jpg, detail=1, paragraph=True, x_ths=2000, y_ths=.2,\
                                   text_threshold=.1, height_ths=1000, min_size=min_size)
         # logger.info('before crop results of %s : %s', jpg, results)
         max_box = [10000, 10000, 0, 0]
@@ -58,7 +58,7 @@ class ReaderInterface(ABC):
         img = Image.open(jpg)
         img = img.crop(tuple(max_box))
         img.save(jpg)
-        # results = reader.readtext(image=jpg, detail=1, paragraph=True, x_ths=2000, y_ths=.2,\
+        # results = easyocr_reader.readtext(image=jpg, detail=1, paragraph=True, x_ths=2000, y_ths=.2,\
         #                           text_threshold=.1, height_ths=1000, min_size=50)
         # logger.info('after crop results of %s : %s', jpg, results)
 
@@ -109,14 +109,13 @@ class BcReader(ReaderInterface):
         ref = cls.get_ref(img)
         title = cls.get_title(img)
         ingredients = cls.get_ingredients(img)
-        print(ingredients)
-        return ref, title, parser.parse_ingredients(ingredients)
+        return [(ref, title, parser.parse_ingredients(ingredients))]
     @classmethod
     def get_ref(cls, img):
         img_footpage = img.crop((0, img.height * 0.98, img.width, img.height))
         img_footpage.save(cls.footpage_workfile)
         try:
-            reader_result = reader.readtext(image=cls.footpage_workfile, text_threshold=.1)
+            reader_result = easyocr_reader.readtext(image=cls.footpage_workfile, text_threshold=.1)
         except ValueError:
             print('No text found')
         if max(reader_result, key=itemgetter(2))[0][0][0] < img_footpage.width/2:
@@ -136,7 +135,7 @@ class BcReader(ReaderInterface):
         img_recipe.save(cls.title_workfile)
         cls.autocrop(cls.title_workfile)
         try:
-            instructions = reader.readtext(image=cls.title_workfile, detail=1, paragraph=True,\
+            instructions = easyocr_reader.readtext(image=cls.title_workfile, detail=1, paragraph=True,\
                                            y_ths=.2, height_ths=0.2, min_size=100)
         except ValueError:
             print('No text found')
@@ -209,11 +208,11 @@ class BcReader(ReaderInterface):
         # cls.autocrop(cls.ingredients_workfile)
         # img = Image.open(self.ingredients_workfile)
         try:
-            ingredients_easyocr = reader.readtext(image=cls.ingredients_workfile, detail=1,
+            ingredients_easyocr = easyocr_reader.readtext(image=cls.ingredients_workfile, detail=1,
                                           text_threshold=0.5, paragraph=True,
-                                          y_ths=.3, height_ths=5)
-            ingredients_tesseract = pytesseract.image_to_string(
-                img_ingredients, lang='fra', config='--psm 6')
+                                          y_ths=.4, height_ths=5)
+            # ingredients_tesseract = pytesseract.image_to_string(
+            #     img_ingredients, lang='fra', config='--psm 6')
             # pytesseract.image_to_boxes
         except ValueError:
             print('No text found')
@@ -259,12 +258,12 @@ class CgReader(ReaderInterface):
         if not cls.can_read(location, name):
             raise ValueError('Cannot parse exception.')
         pic = cls.image_preprocessing(os.path.join(location, name))
-        cls.reader_result = reader.readtext(image=pic, detail=1, paragraph=True)
+        cls.reader_result = easyocr_reader.readtext(image=pic, detail=1, paragraph=True)
         img = Image.open(pic)
         ref = cls.get_ref(img)
         title = cls.get_title(img)
         ingredients = cls.get_ingredients(img)
-        return ref, title, parser.parse_ingredients(ingredients)
+        return [(ref, title, parser.parse_ingredients(ingredients))]
     @classmethod
     def get_ref(cls, img):
         ref = 'CGp' + str(cls.reader_result[0][1]).split(sep=' ', maxsplit=1)[0]
@@ -276,7 +275,7 @@ class CgReader(ReaderInterface):
             cls.reader_result[1][0][2][0], cls.reader_result[1][0][2][1]
         img_title = img.crop(title_coordinates)
         img_title.save(cls.title_workfile)
-        title = reader.readtext(image=cls.title_workfile, detail=1)[0][1]
+        title = easyocr_reader.readtext(image=cls.title_workfile, detail=1)[0][1]
         logger.info('title: %s', title)
         return title
     @classmethod
@@ -285,7 +284,7 @@ class CgReader(ReaderInterface):
             cls.reader_result[2][0][2][0], cls.reader_result[2][0][2][1]
         img_ingredients = img.crop(ingredients_coordinates)
         img_ingredients.save(cls.ingredients_workfile)
-        ingredients_list = reader.readtext(image=cls.ingredients_workfile, detail=0,
+        ingredients_list = easyocr_reader.readtext(image=cls.ingredients_workfile, detail=0,
                                       ycenter_ths=.5, width_ths=.7, height_ths=1)
         ingredients_str = ' '.join(ingredients_list)
         parsed_ingredients_list = parser.parse_stream(ingredients_str)
@@ -308,13 +307,13 @@ class EbReader(ReaderInterface):
         if not cls.can_read(location, name):
             raise ValueError('Cannot parse exception.')
         pic = cls.image_preprocessing(os.path.join(location, name))
-        cls.reader_result = reader.readtext(image=pic, detail=1, paragraph=True)
+        cls.reader_result = easyocr_reader.readtext(image=pic, detail=1, paragraph=True)
         # print(cls.reader_result)
         img = Image.open(pic)
         ref = cls.get_ref(img)
         title = cls.get_title(img)
         ingredients = cls.get_ingredients(img)
-        return ref, title, parser.parse_ingredients(ingredients)
+        return [(ref, title, parser.parse_ingredients(ingredients))]
     @classmethod
     def get_ref(cls, img=None):
         doc = nlp(cls.reader_result[-1][1])
@@ -328,7 +327,7 @@ class EbReader(ReaderInterface):
     @classmethod
     def get_title(cls, img):
         pic = './tmp/img.jpg'
-        title = reader.readtext(pic, detail=0, paragraph=True, low_text=.19, x_ths=10, y_ths=.1)[1]
+        title = easyocr_reader.readtext(pic, detail=0, paragraph=True, low_text=.19, x_ths=10, y_ths=.1)[1]
         title = title.strip().capitalize()
         logger.info('title: %s', title)
         return title
@@ -342,7 +341,7 @@ class EbReader(ReaderInterface):
                 img = img.resize((img.width * 2, img.height * 2))
                 img.save(pic)
                 print('---- easy ocr ----')
-                print(reader.readtext(image=pic, detail=0))
+                print(easyocr_reader.readtext(image=pic, detail=0))
                 ingredients_stream = pytesseract.image_to_string(img, lang='fra', config='--psm 6')
                 logger.info('pytesseract ingredients_stream: %s', ingredients_stream)
                 # remove first line and put the rest in one line
@@ -391,20 +390,21 @@ class FmReader(ReaderInterface):
         pic = cls.image_preprocessing(os.path.join(location, name))
         img = Image.open(pic)
         title = cls.get_title(img)
-        print(title)
         ref = 'FM_' + title
-        print(ref)
         ingredients = cls.get_ingredients(img)
-        print(ingredients)
-        return ref, title, parser.parse_ingredients(ingredients)
+        return [(ref, title, parser.parse_ingredients(ingredients))]
     @classmethod
     def get_title(cls, img):
-        easy = reader.readtext(image="tmp/img.jpg", detail=1)
-        return easy[1][1] if cls.left_page else easy[0][1]
+        easy = easyocr_reader.readtext(image="tmp/img.jpg", detail=1)
+        title = easy[1][1] if cls.left_page else easy[0][1]
+        logger.info('title: %s', title)
+        return title
     @classmethod
     def get_ref(cls, img=None):
         tess = pytesseract.image_to_string('tmp/img.jpg', lang='fra', config='--psm 6')
-        return 'FMp' + tess.split('\n')[-2].replace('|','').strip()
+        ref = 'FMp' + tess.split('\n')[-2].replace('|','').strip()
+        logger.info('ref: %s', ref)
+        return ref
     @classmethod
     def get_ingredients(cls, img):
         tess = pytesseract.image_to_string("tmp/img.jpg", lang='fra', config='--psm 6')
@@ -432,6 +432,7 @@ class FmReader(ReaderInterface):
             else:
                 break
             empty_line = False
+        logger.info('ingredients list: %s', ingredient_list)
         return ingredient_list
 
 class PpReader(ReaderInterface):
@@ -453,7 +454,7 @@ class PpReader(ReaderInterface):
         title = cls.get_title(img)
         ref = 'PP_' + title.replace(' ', '_').replace("'", "")
         ingredients = cls.get_ingredients(img)
-        return ref, title, parser.parse_ingredients(ingredients)
+        return [(ref, title, parser.parse_ingredients(ingredients))]
     @classmethod
     def get_ref(cls, img=None):
         pass
@@ -509,28 +510,29 @@ class SmReader(ReaderInterface):
         title = cls.get_title(pic)
         ref = 'SM_' + title.replace(' ', '_').replace("'", "")
         ingredients = cls.get_ingredients(pic)
-        return ref, title, parser.parse_ingredients(ingredients)
+        return [(ref, title, parser.parse_ingredients(ingredients))]
     @classmethod
     def get_ref(cls, img=None):
         pass
     @classmethod
     def get_title(cls, img):
         # pic = './tmp/img.jpg'
-        title = reader.readtext(img, detail=0, paragraph=True, y_ths=.1)[0]
+        title = easyocr_reader.readtext(img, detail=0, paragraph=True, y_ths=.1)[0]
         title = title.strip().capitalize()
         logger.info('title: %s', title)
         return title
     @classmethod
     def get_ingredients(cls, pic):
         # pic = './tmp/ingredients.jpg'
-        ingredients_coordinates = reader.readtext(pic, detail=1,paragraph=True,y_ths=.15)[1][0]
+        ingredients_coordinates = easyocr_reader.readtext(pic, detail=1,paragraph=True,y_ths=.15)[1][0]
         img = Image.open(pic)
         img = img.crop((ingredients_coordinates[0][0],\
                         ingredients_coordinates[0][1],\
                         ingredients_coordinates[2][0],\
                         ingredients_coordinates[2][1]))
         img.save('tmp/ingredients.jpg')
-        ingredients = reader.readtext('tmp/ingredients.jpg', detail=0, ycenter_ths=.5, width_ths=.7, height_ths=1)
+        ingredients = easyocr_reader.readtext('tmp/ingredients.jpg', detail=0, ycenter_ths=.5, width_ths=.7, height_ths=1)
+        logger.info('ingredients: %s', ingredients)
         return ingredients
 class Reader(ReaderInterface):
     """pick the right reader as per file location"""
