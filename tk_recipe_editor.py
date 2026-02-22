@@ -16,7 +16,7 @@ class InputFrame(customtkinter.CTkFrame):
         self.recipe_name = customtkinter.CTkEntry(self)
         self.recipe_ref_label = customtkinter.CTkLabel(self, text="Recipe Reference:")
         self.recipe_ref = customtkinter.CTkEntry(self)
-        self.ingredients = customtkinter.CTkTextbox(self, height=400, width=200)
+        self.ingredients = customtkinter.CTkTextbox(self, height=400, width=400)
         self.recipe_name_label.grid(row=0, column=0, padx=5, pady=5, sticky="ew")
         self.recipe_name.grid(row=0, column=1, padx=5, pady=5, sticky="ew")
         self.recipe_ref_label.grid(row=1, column=0, padx=5, pady=5, sticky="ew")
@@ -50,7 +50,7 @@ class App(customtkinter.CTk):
     def __init__(self):
         super().__init__()
         self.title("Recipe Editor")
-        self.geometry("600x600")
+        self.geometry("800x800")
         self.grid_columnconfigure((0, 1), weight=1)
         self.input_frame = InputFrame(self)
         self.input_frame.grid(row=0, column=0, sticky="nsew")

@@ -51,6 +51,7 @@ class IngredientEntry:
             'cuil. à café': 'càc',
             'c à c': 'càc',
             'c. à s.': 'càs',
+            'cs': 'càs',
             'c à s ': 'càs',
             'c.às': 'càs',
             'cuillères à soupe': 'càs',
@@ -144,7 +145,7 @@ class Recipe():
         Args:
             location (str): Directory to save the recipe file.
         """
-        name = self.ref if self.ref else self.name
+        name = self.ref + '_' + self.name.replace(' ','_').replace("'", "_") if self.ref else self.name
         filename = name + '.json'
         with open(os.path.join(location, filename), 'w', encoding='utf-8') as outfile:
             json.dump(self.serialize(), outfile, indent=2, ensure_ascii=False)

@@ -4,6 +4,7 @@ import json
 import configparser
 import logging
 import spacy
+import sqlite3
 from ingredient import Ingredient
 from recipe import IngredientEntry
 config = configparser.ConfigParser()
@@ -11,15 +12,19 @@ config.read('./config.cfg', encoding='utf-8')
 nlp = spacy.load("fr_core_news_md")
 logger = logging.getLogger(__name__)
 UNIT_LIST = config['DEFAULT'].get('UNIT_LIST', '').split(',')
+DB_FILE = 'recipes.db'
+# Create a connection to the SQLite database (or create it if it doesn't exist)
+conn = sqlite3.connect(DB_FILE)
+cursor = conn.cursor()
 
 def parse_ingredients(raw_list_of_ingredients: list):
     """Isolate the amounts from the rest and return a dict(name, amount)"""
     result = {}
     for item in raw_list_of_ingredients:
-        split_item = str(item).split(maxsplit=1)
-        amount = str(split_item[0]).replace(',', '.')
+        split_item = str(item).replace('’', "'").split(maxsplit=1)
+        amount = str(split_item[0]).replace(',', '.').replace('½','0.5')
         try:
-            amount = eval(amount)
+            amount = round(eval(amount), 1)
             name = str(split_item[1]).lower()
         except (NameError, SyntaxError):
             if amount.lower() in ['un', 'une']:
@@ -247,7 +252,7 @@ def strategy01357(d: str, text_list, lemma_list, pos_list, book_ref=None):
         raise ValueError('A very specific bad thing happened.')
     return (unit, jxt, name, lemma, book_ref)
 
-def strategy_name_only(d: str, _text_list, lemma_list, pos_list, _book_ref: str):
+def strategy_name_only(d: str, text_list, lemma_list, pos_list, book_ref: str):
     """Sel"""
     lemma = ' '.join(lemma_list)
     unit = 'p'
@@ -304,6 +309,7 @@ def parse_ingredients_bill_dict(ingredients_bill_dict: dict, recipe_ref: str):
     """Return a list of IngredientEntry objects from a dict of ingredients"""
     entries = []
     for d , amount in ingredients_bill_dict.items():
+        print(d + ', ' + str(amount))
         doc = nlp(' '.join([str(amount), d]))
         try:
             # strategy = choose_strategy(get_strategy(' '.join([str(amount), d])))
