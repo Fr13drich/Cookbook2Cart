@@ -198,7 +198,7 @@ class BcReader(ReaderInterface):
     @classmethod
     def get_ingredients(cls, img):
         if cls.left_page:
-            ingredients_coordinates = img.width*.06, 0, img.width/3, img.height*.85
+            ingredients_coordinates = img.width*.05, 0, img.width/3, img.height*.85
         else:
             ingredients_coordinates = img.width*.68, 0, img.width*.97, img.height*.85
         img_ingredients = img.crop(ingredients_coordinates)

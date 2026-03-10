@@ -58,6 +58,11 @@ def parse_stream(ingredient_stream: str):
        '1 pincée de sel, 1 pincée de poivre' returns ['1 pincée de sel', '1 pincée de poivre']
     """
     logger.info('raw ingredient stream before parsing: %s', ingredient_stream)
+    #remove all after '('
+    try:
+        ingredient_stream = ingredient_stream[:ingredient_stream.index('(')]
+    except ValueError:
+        pass
     # handle the case where there is just one word
     if ingredient_stream.strip().count(' ') == 0:
         return [ingredient_stream.strip()]
