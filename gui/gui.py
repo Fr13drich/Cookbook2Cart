@@ -137,6 +137,7 @@ class RecipesFrame(customtkinter.CTkFrame):
                 recipe = next(gen)
                 self.recipe_frame_list[i][j].recipe_picker.set(recipe[0])
                 self.recipe_frame_list[i][j].ratio.set(recipe[1])
+                self.recipe_frame_list[i][j].ratio_label.configure(text=str(recipe[1]))
         # for recipe in recipe_list:
         #     self.recipe_frame_list[recipe[2]][recipe[3]]\
         #         .recipe_picker.set(recipe[0])
