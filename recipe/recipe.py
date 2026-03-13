@@ -61,6 +61,7 @@ class IngredientEntry:
             'gramme': 'g',
             'kilogramme': 'kg',
             'pincées': 'pincée',
+            'pincee': 'pincée',
             'brins': 'brin',
             'bâtons': 'bâton',
             'billes': 'bille',
@@ -75,7 +76,19 @@ class IngredientEntry:
         return unit_mapping.get(unit, unit)
 
     def __repr__(self):
-        return f"{self.amount} {self.unit} {self.jxt} {self.ingredient.name}"
+        repr_str = ''
+
+        repr_str += str(self.amount) if self.amount else ''
+        if (self.unit) and (self.unit != 'p'):
+            repr_str += ' ' + self.unit if repr_str else self.unit
+        if self.jxt:
+            if self.jxt[-1] == "'":
+                repr_str += ' ' + self.jxt + self.ingredient.name if repr_str else self.jxt + self.ingredient.name
+            else:
+                repr_str += ' ' + self.jxt + ' ' + self.ingredient.name if repr_str else self.jxt + ' ' + self.ingredient.name
+        else:
+            repr_str += ' ' + self.ingredient.name if repr_str else self.ingredient.name
+        return repr_str
 
     def __str__(self):
         """Return a human-readable string representation of the ingredient entry."""
