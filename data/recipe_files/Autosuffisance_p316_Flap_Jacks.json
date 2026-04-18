@@ -1,0 +1,30 @@
+{
+  "ref": "Autosuffisance_p316",
+  "name": "Flap Jacks",
+  "ingredients_bill": [
+    {
+      "amount": 112,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "beurre"
+    },
+    {
+      "amount": 70,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "sucre"
+    },
+    {
+      "amount": 1,
+      "unit": "càs",
+      "jxt": "de",
+      "ingredient": "sirop"
+    },
+    {
+      "amount": 170,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "flocons d'avoine"
+    }
+  ]
+}

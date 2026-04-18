@@ -1,11 +1,18 @@
 """tk recipe editor"""
+import logging
 import tkinter
 import tkinter.messagebox
 import tkinter.filedialog
 import customtkinter
+import configparser
 
 from recipe import Recipe
 from reader import parser
+
+config = configparser.ConfigParser()
+config.read('./config.cfg', encoding='utf-8')
+logger = logging.getLogger(__name__)
+logging.basicConfig(filename=config['DEFAULT']['LOG_FILE'], level=logging.DEBUG, encoding='utf-8')
 
 
 class InputFrame(customtkinter.CTkFrame):
@@ -16,7 +23,7 @@ class InputFrame(customtkinter.CTkFrame):
         self.recipe_name = customtkinter.CTkEntry(self)
         self.recipe_ref_label = customtkinter.CTkLabel(self, text="Recipe Reference:")
         self.recipe_ref = customtkinter.CTkEntry(self)
-        self.ingredients = customtkinter.CTkTextbox(self, height=400, width=400)
+        self.ingredients = customtkinter.CTkTextbox(self, height=400, width=400, font=('Arial', 20, 'normal'))
         self.recipe_name_label.grid(row=0, column=0, padx=5, pady=5, sticky="ew")
         self.recipe_name.grid(row=0, column=1, padx=5, pady=5, sticky="ew")
         self.recipe_ref_label.grid(row=1, column=0, padx=5, pady=5, sticky="ew")
