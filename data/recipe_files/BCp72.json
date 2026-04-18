@@ -1,0 +1,96 @@
+{
+  "ref": "BCp72",
+  "name": "Salade d'asperges blanches et vertes aux œufs pochés",
+  "ingredients_bill": [
+    {
+      "amount": 400,
+      "unit": "g",
+      "jxt": "d'",
+      "ingredient": "asperges blanches"
+    },
+    {
+      "amount": 400,
+      "unit": "g",
+      "jxt": "d'",
+      "ingredient": "asperges vertes"
+    },
+    {
+      "amount": 2,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "échalote"
+    },
+    {
+      "amount": 2,
+      "unit": "brin",
+      "jxt": "de",
+      "ingredient": "menthe"
+    },
+    {
+      "amount": 0.5,
+      "unit": "botte",
+      "jxt": "de",
+      "ingredient": "ciboulette fraîche"
+    },
+    {
+      "amount":0.5,
+      "unit": "botte",
+      "jxt": "de",
+      "ingredient": "persil frais"
+    },
+    {
+      "amount": 0.5,
+      "unit": "botte",
+      "jxt": "de",
+      "ingredient": "cerfeuil frais"
+    },
+    {
+      "amount": 2,
+      "unit": "càs",
+      "jxt": "de",
+      "ingredient": "sucre"
+    },
+    {
+      "amount": 2,
+      "unit": "càs",
+      "jxt": "de",
+      "ingredient": "sel"
+    },
+    {
+      "amount": 1,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "demi-citron"
+    },
+    {
+      "amount": 150,
+      "unit": "ml",
+      "jxt": "de",
+      "ingredient": "vinaigrette"
+    },
+    {
+      "amount": 4,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "œufs"
+    },
+    {
+      "amount": 2,
+      "unit": "càs",
+      "jxt": "d'",
+      "ingredient": "eau"
+    },
+    {
+      "amount": 2,
+      "unit": "càs",
+      "jxt": "de",
+      "ingredient": "crème fraîche"
+    },
+    {
+      "amount": 0.5,
+      "unit": "càs",
+      "jxt": "de",
+      "ingredient": "mayonnaise"
+    }
+  ]
+}

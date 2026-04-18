@@ -1,0 +1,96 @@
+{
+  "ref": "BCp248",
+  "name": "Risotto aux artichauts",
+  "ingredients_bill": [
+    {
+      "amount": 30,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "tranches de lard maigre"
+    },
+    {
+      "amount": 250,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "tomates"
+    },
+    {
+      "amount": 1,
+      "unit": "gousse",
+      "jxt": "d'",
+      "ingredient": "ail"
+    },
+    {
+      "amount": 1,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "échalote"
+    },
+    {
+      "amount": 6,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "artichauts"
+    },
+    {
+      "amount": 80,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "beurre"
+    },
+    {
+      "amount": 4,
+      "unit": "càs",
+      "jxt": "d'",
+      "ingredient": "huile d'olive"
+    },
+    {
+      "amount": 1,
+      "unit": "pincée",
+      "jxt": "de",
+      "ingredient": "sucre"
+    },
+    {
+      "amount": 1,
+      "unit": "pincée",
+      "jxt": "de",
+      "ingredient": "sel"
+    },
+    {
+      "amount": 1,
+      "unit": "pincée",
+      "jxt": "de",
+      "ingredient": "poivre noir"
+    },
+    {
+      "amount": 250,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "riz arborio"
+    },
+    {
+      "amount": 750,
+      "unit": "ml",
+      "jxt": "de",
+      "ingredient": "bouillon de poule"
+    },
+    {
+      "amount": 2,
+      "unit": "brin",
+      "jxt": "de",
+      "ingredient": "romarin frais"
+    },
+    {
+      "amount": 90,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "parmesan"
+    },
+    {
+      "amount": 1,
+      "unit": "brin",
+      "jxt": "de",
+      "ingredient": "persil plat frais"
+    }
+  ]
+}

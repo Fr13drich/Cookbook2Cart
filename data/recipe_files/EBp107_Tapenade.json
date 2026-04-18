@@ -1,0 +1,36 @@
+{
+  "ref": "EBp107",
+  "name": "Tapenade",
+  "ingredients_bill": [
+    {
+      "amount": 250,
+      "unit": "g",
+      "jxt": "d'",
+      "ingredient": "olives dénoyautées"
+    },
+    {
+      "amount": 30,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "câpres au vinaigre"
+    },
+    {
+      "amount": 3,
+      "unit": "gousse",
+      "jxt": "d'",
+      "ingredient": "ail pelées et dégermées"
+    },
+    {
+      "amount": 1,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "citron"
+    },
+    {
+      "amount": 1,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "huile d'olive"
+    }
+  ]
+}

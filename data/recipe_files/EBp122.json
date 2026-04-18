@@ -1,0 +1,24 @@
+{
+  "ref": "EBp122",
+  "name": "Choucroute",
+  "ingredients_bill": [
+    {
+      "amount": 1,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "chou"
+    },
+    {
+      "amount": 1,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "saumure à sec de 2 %"
+    },
+    {
+      "amount": 5,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "baies de genièvre"
+    }
+  ]
+}

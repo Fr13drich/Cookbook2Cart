@@ -1,0 +1,42 @@
+{
+  "ref": "BCp126",
+  "name": "Crêpes aux pommes, au lard et au sirop d'érable",
+  "ingredients_bill": [
+    {
+      "amount": 2,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "pommes"
+    },
+    {
+      "amount": 12,
+      "unit": "tranche",
+      "jxt": "de",
+      "ingredient": "lard"
+    },
+    {
+      "amount": 1,
+      "unit": "càs",
+      "jxt": "d'",
+      "ingredient": "huile végétale"
+    },
+    {
+      "amount": 400,
+      "unit": "ml",
+      "jxt": "de",
+      "ingredient": "pâte à crêpe sucrée"
+    },
+    {
+      "amount": 4,
+      "unit": "càs",
+      "jxt": "de",
+      "ingredient": "sucre"
+    },
+    {
+      "amount": 100,
+      "unit": "ml",
+      "jxt": "de",
+      "ingredient": "sirop d'érable"
+    }
+  ]
+}

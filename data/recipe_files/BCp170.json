@@ -1,0 +1,96 @@
+{
+  "ref": "BCp170",
+  "name": "Soupe de pommes de terre à la marjolaine",
+  "ingredients_bill": [
+    {
+      "amount": 400,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "pommes de terre"
+    },
+    {
+      "amount": 100,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "poireaux"
+    },
+    {
+      "amount": 50,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "panais"
+    },
+    {
+      "amount": 0.5,
+      "unit": "gousse",
+      "jxt": "d'",
+      "ingredient": "ail"
+    },
+    {
+      "amount": 30,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "beurre"
+    },
+    {
+      "amount": 1,
+      "unit": "pincée",
+      "jxt": "de",
+      "ingredient": "sel"
+    },
+    {
+      "amount": 1,
+      "unit": "pincée",
+      "jxt": "de",
+      "ingredient": "poivre blanc"
+    },
+    {
+      "amount": 1,
+      "unit": "pincée",
+      "jxt": "de",
+      "ingredient": "noix muscade"
+    },
+    {
+      "amount": 1,
+      "unit": "l",
+      "jxt": "de",
+      "ingredient": "bouillon de poule"
+    },
+    {
+      "amount": 0.5,
+      "unit": "càc",
+      "jxt": "de",
+      "ingredient": "marjolaine séchée"
+    },
+    {
+      "amount": 200,
+      "unit": "ml",
+      "jxt": "de",
+      "ingredient": "crème fleurette"
+    },
+    {
+      "amount": 150,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "crème fraîche"
+    },
+    {
+      "amount": 1,
+      "unit": "càs",
+      "jxt": "d'",
+      "ingredient": "huile"
+    },
+    {
+      "amount": 30,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "tranches de lard fumé"
+    },
+    {
+      "amount": 2,
+      "unit": "tranche",
+      "jxt": "de",
+      "ingredient": "pain blanc"
+    }
+  ]
+}

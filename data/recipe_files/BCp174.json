@@ -1,0 +1,120 @@
+{
+  "ref": "BCp174",
+  "name": "Soupe de courge à l'américaine et ses croûtons au fromage",
+  "ingredients_bill": [
+    {
+      "amount": 1.6,
+      "unit": "kg",
+      "jxt": "de",
+      "ingredient": "courge musquée"
+    },
+    {
+      "amount": 1,
+      "unit": "botte",
+      "jxt": "d'",
+      "ingredient": "aneth"
+    },
+    {
+      "amount": 15,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "gingembre"
+    },
+    {
+      "amount": 1,
+      "unit": "gousse",
+      "jxt": "d'",
+      "ingredient": "ail"
+    },
+    {
+      "amount": 80,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "carottes"
+    },
+    {
+      "amount": 150,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "poivron rouge"
+    },
+    {
+      "amount": 30,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "céleri"
+    },
+    {
+      "amount": 80,
+      "unit": "g",
+      "jxt": "d'",
+      "ingredient": "oignons"
+    },
+    {
+      "amount": 40,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "beurre"
+    },
+    {
+      "amount": 0.5,
+      "unit": "càc",
+      "jxt": "de",
+      "ingredient": "sel"
+    },
+    {
+      "amount": 1,
+      "unit": "pincée",
+      "jxt": "de",
+      "ingredient": "noix muscade"
+    },
+    {
+      "amount": 3,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "clous de girofle"
+    },
+    {
+      "amount": 1,
+      "unit": "feuille",
+      "jxt": "de",
+      "ingredient": "laurier"
+    },
+    {
+      "amount": 1,
+      "unit": "càc",
+      "jxt": "de",
+      "ingredient": "ketchup"
+    },
+    {
+      "amount": 2,
+      "unit": "càc",
+      "jxt": "de",
+      "ingredient": "poudre de curry"
+    },
+    {
+      "amount": 0.5,
+      "unit": "càc",
+      "jxt": "de",
+      "ingredient": "paprika doux"
+    },
+    {
+      "amount": 1,
+      "unit": "l",
+      "jxt": "de",
+      "ingredient": "bouillon de poule"
+    },
+    {
+      "amount": 200,
+      "unit": "ml",
+      "jxt": "de",
+      "ingredient": "crème fleurette"
+    },
+    {
+      "amount": 100,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "crème fraîche"
+    }
+  ]
+}

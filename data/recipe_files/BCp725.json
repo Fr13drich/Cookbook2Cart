@@ -1,0 +1,60 @@
+{
+  "ref": "BCp725",
+  "name": "Pizzas végétariennes",
+  "ingredients_bill": [
+    {
+      "amount": 800,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "pâte à pizza"
+    },
+    {
+      "amount": 200,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "feuilles d'épinards"
+    },
+    {
+      "amount": 1,
+      "unit": "càc",
+      "jxt": "de",
+      "ingredient": "sel"
+    },
+    {
+      "amount": 400,
+      "unit": "ml",
+      "jxt": "de",
+      "ingredient": "sauce tomate"
+    },
+    {
+      "amount": 3,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "tomates"
+    },
+    {
+      "amount": 1,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "oignon rouge"
+    },
+    {
+      "amount": 2,
+      "unit": "bille",
+      "jxt": "de",
+      "ingredient": "mozzarella"
+    },
+    {
+      "amount": 4,
+      "unit": "càs",
+      "jxt": "d'",
+      "ingredient": "huile d'olive vierge extra"
+    },
+    {
+      "amount": 1,
+      "unit": "càc",
+      "jxt": "d'",
+      "ingredient": "origan"
+    }
+  ]
+}

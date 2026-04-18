@@ -1,0 +1,102 @@
+{
+  "ref": "BCp164",
+  "name": "Soupe de tomates et ses croûtons au basilic",
+  "ingredients_bill": [
+    {
+      "amount": 60,
+      "unit": "ml",
+      "jxt": "d'",
+      "ingredient": "huile d'olive"
+    },
+    {
+      "amount": 2,
+      "unit": "càs",
+      "jxt": "de",
+      "ingredient": "sucre"
+    },
+    {
+      "amount": 70,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "céleri"
+    },
+    {
+      "amount": 140,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "carottes"
+    },
+    {
+      "amount": 150,
+      "unit": "g",
+      "jxt": "d'",
+      "ingredient": "oignon"
+    },
+    {
+      "amount": 2,
+      "unit": "gousse",
+      "jxt": "d'",
+      "ingredient": "ail"
+    },
+    {
+      "amount": 4,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "clous de girofle"
+    },
+    {
+      "amount": 1,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "citron"
+    },
+    {
+      "amount": 1,
+      "unit": "càc",
+      "jxt": "de",
+      "ingredient": "grains de poivre blanc"
+    },
+    {
+      "amount": 1,
+      "unit": "brin",
+      "jxt": "de",
+      "ingredient": "romarin frais"
+    },
+    {
+      "amount": 1,
+      "unit": "brin",
+      "jxt": "de",
+      "ingredient": "thym frais"
+    },
+    {
+      "amount": 1,
+      "unit": "feuille",
+      "jxt": "de",
+      "ingredient": "laurier"
+    },
+    {
+      "amount": 1,
+      "unit": "càs",
+      "jxt": "de",
+      "ingredient": "concentré de tomates"
+    },
+    {
+      "amount": 1.2,
+      "unit": "kg",
+      "jxt": "de",
+      "ingredient": "tomates"
+    },
+    {
+      "amount": 1,
+      "unit": "càc",
+      "jxt": "de",
+      "ingredient": "sel"
+    },
+    {
+      "amount": 750,
+      "unit": "ml",
+      "jxt": "de",
+      "ingredient": "bouillon de poule"
+    }
+  ]
+}

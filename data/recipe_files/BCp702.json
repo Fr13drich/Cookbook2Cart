@@ -1,0 +1,36 @@
+{
+  "ref": "BCp702",
+  "name": "Pâte sablée",
+  "ingredients_bill": [
+    {
+      "amount": 400,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "farine"
+    },
+    {
+      "amount": 200,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "beurre"
+    },
+    {
+      "amount": 100,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "sucre"
+    },
+    {
+      "amount": 1,
+      "unit": "pincée",
+      "jxt": "de",
+      "ingredient": "sel"
+    },
+    {
+      "amount": 2,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "œufs"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "ref": "BCp704",
+  "name": "Biscuits fourrés à la confiture",
+  "ingredients_bill": [
+    {
+      "amount": 500,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "pâte sablée"
+    },
+    {
+      "amount": 2,
+      "unit": "càs",
+      "jxt": "de",
+      "ingredient": "farine"
+    },
+    {
+      "amount": 100,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "confiture de fruits"
+    },
+    {
+      "amount": 1,
+      "unit": "càs",
+      "jxt": "de",
+      "ingredient": "sucre glace"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "ref": "BCp378",
+  "name": "Ragoût de champignons au persil et à la noix muscade",
+  "ingredients_bill": [
+    {
+      "amount": 600,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "chanterelles"
+    },
+    {
+      "amount": 2,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "échalotes"
+    },
+    {
+      "amount": 40,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "beurre"
+    },
+    {
+      "amount": 1,
+      "unit": "pincée",
+      "jxt": "de",
+      "ingredient": "sel"
+    },
+    {
+      "amount": 1,
+      "unit": "pincée",
+      "jxt": "de",
+      "ingredient": "poivre noir"
+    },
+    {
+      "amount": 1,
+      "unit": "pincée",
+      "jxt": "de",
+      "ingredient": "noix muscade"
+    },
+    {
+      "amount": 1,
+      "unit": "botte",
+      "jxt": "de",
+      "ingredient": "persil"
+    },
+    {
+      "amount": 200,
+      "unit": "ml",
+      "jxt": "de",
+      "ingredient": "crème fraîche liquide"
+    },
+    {
+      "amount": 2,
+      "unit": "càs",
+      "jxt": "de",
+      "ingredient": "crème fraîche"
+    },
+    {
+      "amount": 1,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "citron"
+    }
+  ]
+}

@@ -4,25 +4,25 @@
   "ingredients_bill": [
     {
       "amount": 180,
-      "unit": "gramme",
+      "unit": "g",
       "jxt": "de",
       "ingredient": "carottes"
     },
     {
       "amount": 80,
-      "unit": "gramme",
+      "unit": "g",
       "jxt": "de",
       "ingredient": "céleri"
     },
     {
       "amount": 60,
-      "unit": "gramme",
+      "unit": "g",
       "jxt": "d'",
       "ingredient": "échalotes"
     },
     {
       "amount": 600,
-      "unit": "gramme",
+      "unit": "g",
       "jxt": "de",
       "ingredient": "citrouille"
     },
@@ -34,15 +34,15 @@
     },
     {
       "amount": 30,
-      "unit": "gramme",
+      "unit": "g",
       "jxt": "de",
       "ingredient": "beurre"
     },
     {
       "amount": 20,
-      "unit": "millilitre",
+      "unit": "ml",
       "jxt": "d'",
-      "ingredient": "huile olive"
+      "ingredient": "huile d'olive"
     },
     {
       "amount": 1,
@@ -58,7 +58,7 @@
     },
     {
       "amount": 1,
-      "unit": "cuil. à café",
+      "unit": "càc",
       "jxt": "de",
       "ingredient": "paprika doux"
     },
@@ -70,7 +70,7 @@
     },
     {
       "amount": 40,
-      "unit": "gramme",
+      "unit": "g",
       "jxt": "de",
       "ingredient": "ketchup"
     },
@@ -82,19 +82,19 @@
     },
     {
       "amount": 200,
-      "unit": "millilitre",
+      "unit": "ml",
       "jxt": "de",
       "ingredient": "bouillon de poule"
     },
     {
       "amount": 250,
-      "unit": "millilitre",
+      "unit": "ml",
       "jxt": "de",
       "ingredient": "crème fleurette"
     },
     {
       "amount": 250,
-      "unit": "millilitre",
+      "unit": "ml",
       "jxt": "de",
       "ingredient": "lait"
     },
@@ -102,11 +102,11 @@
       "amount": 1,
       "unit": "pincée",
       "jxt": "de",
-      "ingredient": "noix muscade"
+      "ingredient": "noix de muscade"
     },
     {
       "amount": 80,
-      "unit": "gramme",
+      "unit": "g",
       "jxt": "de",
       "ingredient": "fontina"
     }

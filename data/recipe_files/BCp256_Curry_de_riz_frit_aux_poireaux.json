@@ -1,0 +1,42 @@
+{
+  "ref": "BCp256",
+  "name": "Curry de riz frit aux poireaux",
+  "ingredients_bill": [
+    {
+      "amount": 200,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "riz long grain"
+    },
+    {
+      "amount": 200,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "poireaux"
+    },
+    {
+      "amount": 3,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "œufs"
+    },
+    {
+      "amount": 3,
+      "unit": "càs",
+      "jxt": "de",
+      "ingredient": "sauce de soja"
+    },
+    {
+      "amount": 1,
+      "unit": "càc",
+      "jxt": "de",
+      "ingredient": "poudre de curry"
+    },
+    {
+      "amount": 3,
+      "unit": "càs",
+      "jxt": "d'",
+      "ingredient": "huile végétale"
+    }
+  ]
+}

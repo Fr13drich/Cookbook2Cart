@@ -1,0 +1,54 @@
+{
+  "ref": "BCp314",
+  "name": "Gratin de pommes de terre",
+  "ingredients_bill": [
+    {
+      "amount": 250,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "crème fraîche"
+    },
+    {
+      "amount": 250,
+      "unit": "ml",
+      "jxt": "de",
+      "ingredient": "lait"
+    },
+    {
+      "amount": 0.5,
+      "unit": "càc",
+      "jxt": "de",
+      "ingredient": "sel"
+    },
+    {
+      "amount": 1,
+      "unit": "pincée",
+      "jxt": "de",
+      "ingredient": "poivre noir"
+    },
+    {
+      "amount": 1,
+      "unit": "pincée",
+      "jxt": "de",
+      "ingredient": "noix de muscade"
+    },
+    {
+      "amount": 2,
+      "unit": "gousse",
+      "jxt": "d'",
+      "ingredient": "ail"
+    },
+    {
+      "amount": 850,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "pommes de terre"
+    },
+    {
+      "amount": 10,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "beurre"
+    }
+  ]
+}

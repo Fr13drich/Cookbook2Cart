@@ -1,0 +1,36 @@
+{
+  "ref": "EBp100",
+  "name": "Tomates confites à l'huile et au thym",
+  "ingredients_bill": [
+    {
+      "amount": 2,
+      "unit": "kg",
+      "jxt": "de",
+      "ingredient": "tomates à chair pleine"
+    },
+    {
+      "amount": 3,
+      "unit": "càs",
+      "jxt": "de",
+      "ingredient": "vinaigre balsamique"
+    },
+    {
+      "amount": 5,
+      "unit": "brin",
+      "jxt": "de",
+      "ingredient": "thym frais"
+    },
+    {
+      "amount": 1,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "huile d'olive"
+    },
+    {
+      "amount": 1,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "sel"
+    }
+  ]
+}

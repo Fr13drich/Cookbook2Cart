@@ -1,0 +1,36 @@
+{
+  "ref": "confit-doignon",
+  "name": "Confit d'oignons",
+  "ingredients_bill": [
+    {
+      "amount": 500,
+      "unit": "g",
+      "jxt": "d'",
+      "ingredient": "oignons"
+    },
+    {
+      "amount": 4,
+      "unit": "càs",
+      "jxt": "d'",
+      "ingredient": "huile d'olive"
+    },
+    {
+      "amount": 1,
+      "unit": "càc",
+      "jxt": "de",
+      "ingredient": "sel"
+    },
+    {
+      "amount": 50,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "sucre"
+    },
+    {
+      "amount": 3,
+      "unit": "càs",
+      "jxt": "de",
+      "ingredient": "vinaigre balsamique"
+    }
+  ]
+}

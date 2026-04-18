@@ -1,0 +1,54 @@
+{
+  "ref": "BCp224",
+  "name": "Sauté de nouilles au poulet à la mode de shanghai",
+  "ingredients_bill": [
+    {
+      "amount": 300,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "nouilles aux œufs"
+    },
+    {
+      "amount": 5,
+      "unit": "càs",
+      "jxt": "d'",
+      "ingredient": "huile végétale"
+    },
+    {
+      "amount": 6,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "piments séchés"
+    },
+    {
+      "amount": 2,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "carottes"
+    },
+    {
+      "amount": 200,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "brocoli"
+    },
+    {
+      "amount": 2,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "blancs de poulet sans peau"
+    },
+    {
+      "amount": 2,
+      "unit": "càs",
+      "jxt": "de",
+      "ingredient": "pâte de haricots noirs"
+    },
+    {
+      "amount": 100,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "pousses de soja"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "ref": "CGp16",
+  "name": "Bouchées aux marrons et chocolat",
+  "ingredients_bill": [
+    {
+      "amount": 125,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "beurre mou"
+    },
+    {
+      "amount": 350,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "purée de marrons"
+    },
+    {
+      "amount": 200,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "chocolat noir"
+    },
+    {
+      "amount": 100,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "sucre"
+    },
+    {
+      "amount": 2,
+      "unit": "pincée",
+      "jxt": "de",
+      "ingredient": "vanille en poudre pure"
+    },
+    {
+      "amount": 2,
+      "unit": "càs",
+      "jxt": "de",
+      "ingredient": "rhum"
+    }
+  ]
+}

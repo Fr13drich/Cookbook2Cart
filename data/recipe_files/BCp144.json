@@ -1,0 +1,60 @@
+{
+  "ref": "BCp144",
+  "name": "Sauce tomate",
+  "ingredients_bill": [
+    {
+      "amount": 2,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "oignons rouges"
+    },
+    {
+      "amount": 2,
+      "unit": "gousse",
+      "jxt": "d'",
+      "ingredient": "ail"
+    },
+    {
+      "amount": 6,
+      "unit": "càs",
+      "jxt": "d'",
+      "ingredient": "huile d'olive"
+    },
+    {
+      "amount": 5,
+      "unit": "brin",
+      "jxt": "de",
+      "ingredient": "basilic frais"
+    },
+    {
+      "amount": 1,
+      "unit": "pincée",
+      "jxt": "de",
+      "ingredient": "sel"
+    },
+    {
+      "amount": 1,
+      "unit": "pincée",
+      "jxt": "de",
+      "ingredient": "poivre noir"
+    },
+    {
+      "amount": 1,
+      "unit": "pincée",
+      "jxt": "de",
+      "ingredient": "sucre"
+    },
+    {
+      "amount": 800,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "tomates mondées en boîte"
+    },
+    {
+      "amount": 1,
+      "unit": "càs",
+      "jxt": "de",
+      "ingredient": "concentré de tomate"
+    }
+  ]
+}

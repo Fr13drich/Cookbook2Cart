@@ -1,0 +1,66 @@
+{
+  "ref": "BCp86",
+  "name": "Salade de pommes de terre aux concombres et au lard",
+  "ingredients_bill": [
+    {
+      "amount": 1.5,
+      "unit": "kg",
+      "jxt": "de",
+      "ingredient": "pommes de terre"
+    },
+    {
+      "amount": 450,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "concombres"
+    },
+    {
+      "amount": 100,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "lard fumé"
+    },
+    {
+      "amount": 2,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "oignons"
+    },
+    {
+      "amount": 200,
+      "unit": "ml",
+      "jxt": "d'",
+      "ingredient": "huile de tournesol"
+    },
+    {
+      "amount": 3,
+      "unit": "càs",
+      "jxt": "de",
+      "ingredient": "moutarde forte"
+    },
+    {
+      "amount": 250,
+      "unit": "ml",
+      "jxt": "de",
+      "ingredient": "bouillon de poule"
+    },
+    {
+      "amount": 140,
+      "unit": "ml",
+      "jxt": "de",
+      "ingredient": "vinaigre de cidre"
+    },
+    {
+      "amount": 5.5,
+      "unit": "càc",
+      "jxt": "de",
+      "ingredient": "sel"
+    },
+    {
+      "amount": 1,
+      "unit": "pincée",
+      "jxt": "de",
+      "ingredient": "poivre noir"
+    }
+  ]
+}

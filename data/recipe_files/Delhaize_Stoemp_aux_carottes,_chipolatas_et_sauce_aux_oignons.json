@@ -1,0 +1,102 @@
+{
+  "ref": "Delhaize",
+  "name": "Stoemp aux carottes, chipolatas et sauce aux oignons",
+  "ingredients_bill": [
+    {
+      "amount": 600,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "chipolatas"
+    },
+    {
+      "amount": 200,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "lard fumé en tranches épaisses"
+    },
+    {
+      "amount": 1,
+      "unit": "kg",
+      "jxt": "de",
+      "ingredient": "carottes"
+    },
+    {
+      "amount": 800,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "grosses pommes de terre farineuses"
+    },
+    {
+      "amount": 6,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "oignons doux"
+    },
+    {
+      "amount": 2,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "échalotes"
+    },
+    {
+      "amount": 4,
+      "unit": "brin",
+      "jxt": "de",
+      "ingredient": "thym"
+    },
+    {
+      "amount": 1,
+      "unit": "feuille",
+      "jxt": "de",
+      "ingredient": "laurier"
+    },
+    {
+      "amount": 20,
+      "unit": "ml",
+      "jxt": "de",
+      "ingredient": "lait"
+    },
+    {
+      "amount": 2,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "cubes de bouillon de viande"
+    },
+    {
+      "amount": 1,
+      "unit": "càc",
+      "jxt": "de",
+      "ingredient": "sucre fin"
+    },
+    {
+      "amount": 2,
+      "unit": "càs",
+      "jxt": "de",
+      "ingredient": "sirop de liège"
+    },
+    {
+      "amount": 2,
+      "unit": "càs",
+      "jxt": "de",
+      "ingredient": "moutarde à l'ancienne"
+    },
+    {
+      "amount": 80,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "beurre"
+    },
+    {
+      "amount": 1,
+      "unit": "pincée",
+      "jxt": "de",
+      "ingredient": "noix de muscade"
+    },
+    {
+      "amount": 1,
+      "unit": "pincée",
+      "jxt": "de",
+      "ingredient": "poivre"
+    }
+  ]
+}
