@@ -1,0 +1,78 @@
+{
+  "ref": "PP_Clafoutis_de_pommes",
+  "name": "Clafoutis de pommes",
+  "ingredients_bill": [
+    {
+      "amount": 100,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "farine"
+    },
+    {
+      "amount": 1,
+      "unit": "sachet",
+      "jxt": "de",
+      "ingredient": "levure chimique"
+    },
+    {
+      "amount": 25,
+      "unit": "cl",
+      "jxt": "de",
+      "ingredient": "lait"
+    },
+    {
+      "amount": 4,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "œufs"
+    },
+    {
+      "amount": 80,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "sucre en poudre"
+    },
+    {
+      "amount": 1,
+      "unit": "sachet",
+      "jxt": "de",
+      "ingredient": "sucre vanillé"
+    },
+    {
+      "amount": 1,
+      "unit": "càc",
+      "jxt": "de",
+      "ingredient": "gousses de vanille en poudre"
+    },
+    {
+      "amount": 1,
+      "unit": "càc",
+      "jxt": "de",
+      "ingredient": "rhum"
+    },
+    {
+      "amount": 6,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "pomme"
+    },
+    {
+      "amount": 20,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "beurre"
+    },
+    {
+      "amount": 1,
+      "unit": "càs",
+      "jxt": "de",
+      "ingredient": "cannelle"
+    },
+    {
+      "amount": 1,
+      "unit": "pincée",
+      "jxt": "de",
+      "ingredient": "sel"
+    }
+  ]
+}

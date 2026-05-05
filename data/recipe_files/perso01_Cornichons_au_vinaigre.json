@@ -1,0 +1,60 @@
+{
+  "ref": "perso01",
+  "name": "Cornichons au vinaigre",
+  "ingredients_bill": [
+    {
+      "amount": 3,
+      "unit": "kg",
+      "jxt": "de",
+      "ingredient": "cornichons"
+    },
+    {
+      "amount": 3,
+      "unit": "l",
+      "jxt": "d'",
+      "ingredient": "eau"
+    },
+    {
+      "amount": 1,
+      "unit": "l",
+      "jxt": "de",
+      "ingredient": "vinaigre"
+    },
+    {
+      "amount": 8,
+      "unit": "càs",
+      "jxt": "de",
+      "ingredient": "sucre"
+    },
+    {
+      "amount": 4,
+      "unit": "càs",
+      "jxt": "de",
+      "ingredient": "sel"
+    },
+    {
+      "amount": 1,
+      "unit": "càc",
+      "jxt": "de",
+      "ingredient": "graines de moutarde"
+    },
+    {
+      "amount": 6,
+      "unit": "càs",
+      "jxt": "d'",
+      "ingredient": "aneth"
+    },
+    {
+      "amount": 6,
+      "unit": "gousse",
+      "jxt": "d'",
+      "ingredient": "ail"
+    },
+    {
+      "amount": 6,
+      "unit": "feuille",
+      "jxt": "de",
+      "ingredient": "laurier"
+    }
+  ]
+}

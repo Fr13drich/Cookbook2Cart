@@ -1,0 +1,54 @@
+{
+  "ref": "perso02",
+  "name": "Vol au vent",
+  "ingredients_bill": [
+    {
+      "amount": 1,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "poulet bouilli"
+    },
+    {
+      "amount": 500,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "champignons"
+    },
+    {
+      "amount": 300,
+      "unit": "ml",
+      "jxt": "de",
+      "ingredient": "bouillon de volaille"
+    },
+    {
+      "amount": 2,
+      "unit": "càs",
+      "jxt": "de",
+      "ingredient": "farine"
+    },
+    {
+      "amount": 100,
+      "unit": "ml",
+      "jxt": "de",
+      "ingredient": "crème fraiche"
+    },
+    {
+      "amount": 1,
+      "unit": "pincée",
+      "jxt": "de",
+      "ingredient": "noix de muscade"
+    },
+    {
+      "amount": 1,
+      "unit": "pincée",
+      "jxt": "de",
+      "ingredient": "sel"
+    },
+    {
+      "amount": 1,
+      "unit": "pincée",
+      "jxt": "de",
+      "ingredient": "poivre"
+    }
+  ]
+}

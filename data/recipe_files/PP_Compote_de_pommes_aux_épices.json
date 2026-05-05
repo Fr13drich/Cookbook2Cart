@@ -1,0 +1,36 @@
+{
+  "ref": "PP_Compote_de_pommes_aux_épices",
+  "name": "Compote de pommes aux épices",
+  "ingredients_bill": [
+    {
+      "amount": 10,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "pomme"
+    },
+    {
+      "amount": 0.5,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "citron"
+    },
+    {
+      "amount": 2,
+      "unit": "càc",
+      "jxt": "de",
+      "ingredient": "cannelle"
+    },
+    {
+      "amount": 2,
+      "unit": "pincée",
+      "jxt": "de",
+      "ingredient": "clou de girofle en poudre"
+    },
+    {
+      "amount": 100,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "sucre en poudre"
+    }
+  ]
+}

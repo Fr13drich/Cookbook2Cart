@@ -1,0 +1,30 @@
+{
+  "ref": "EBp136",
+  "name": "Pesto d'orties acidulé",
+  "ingredients_bill": [
+    {
+      "amount": 200,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "feuilles d'ortie"
+    },
+    {
+      "amount": 40,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "gousses d'ail"
+    },
+    {
+      "amount": 30,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "noisettes"
+    },
+    {
+      "amount": 8,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "sel"
+    }
+  ]
+}

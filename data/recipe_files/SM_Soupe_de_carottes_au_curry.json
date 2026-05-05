@@ -1,0 +1,48 @@
+{
+  "ref": "SM_Soupe_de_carottes_au_curry",
+  "name": "Soupe de carottes au curry",
+  "ingredients_bill": [
+    {
+      "amount": 400,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "carottes"
+    },
+    {
+      "amount": 50,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "pomme de terre"
+    },
+    {
+      "amount": 50,
+      "unit": "g",
+      "jxt": "d'",
+      "ingredient": "oignons hachés"
+    },
+    {
+      "amount": 700,
+      "unit": "ml",
+      "jxt": "de",
+      "ingredient": "bouillon de légumes"
+    },
+    {
+      "amount": 1,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "sel et poivre pour assaisonner"
+    },
+    {
+      "amount": 2,
+      "unit": "càc",
+      "jxt": "de",
+      "ingredient": "poudre de curry"
+    },
+    {
+      "amount": 100,
+      "unit": "ml",
+      "jxt": "de",
+      "ingredient": "crème fraîche ou de lait de noix de coco"
+    }
+  ]
+}

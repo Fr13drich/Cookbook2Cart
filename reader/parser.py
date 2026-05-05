@@ -21,6 +21,8 @@ def parse_ingredients(raw_list_of_ingredients: list):
     """Isolate the amounts from the rest and return a dict(name, amount)"""
     result = {}
     for item in raw_list_of_ingredients:
+        if not item.strip():
+            continue
         split_item = str(item).replace('’', "'").split(maxsplit=1)
         amount = str(split_item[0]).replace(',', '.').replace('½','0.5')
         try:
@@ -253,8 +255,12 @@ def strategy01357(d: str, text_list, lemma_list, pos_list, book_ref=None):
         unit = lemma_list[1]
         jxt = text_list[2]
     else:
+        lemma =  ' '.join(lemma_list[1:])
+        name = d[d.index(text_list[1]):]
+        unit = ''
+        jxt = ''
         # print(pos_list)
-        raise ValueError('A very specific bad thing happened.')
+        # raise ValueError('A very specific bad thing happened.')
     return (unit, jxt, name, lemma, book_ref)
 
 def strategy_name_only(d: str, text_list, lemma_list, pos_list, book_ref: str):

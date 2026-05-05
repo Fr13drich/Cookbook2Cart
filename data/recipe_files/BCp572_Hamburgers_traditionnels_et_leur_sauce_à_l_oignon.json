@@ -1,0 +1,96 @@
+{
+  "ref": "BCp572",
+  "name": "Hamburgers traditionnels et leur sauce à l'oignon",
+  "ingredients_bill": [
+    {
+      "amount": 4,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "oignons"
+    },
+    {
+      "amount": 2,
+      "unit": "càs",
+      "jxt": "de",
+      "ingredient": "sucre"
+    },
+    {
+      "amount": 1,
+      "unit": "feuille",
+      "jxt": "de",
+      "ingredient": "laurier"
+    },
+    {
+      "amount": 1,
+      "unit": "pincée",
+      "jxt": "de",
+      "ingredient": "sel"
+    },
+    {
+      "amount": 1,
+      "unit": "pincée",
+      "jxt": "de",
+      "ingredient": "poivre noir"
+    },
+    {
+      "amount": 100,
+      "unit": "ml",
+      "jxt": "de",
+      "ingredient": "vinaigre de fruits"
+    },
+    {
+      "amount": 800,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "bœuf haché maigre"
+    },
+    {
+      "amount": 2,
+      "unit": "càs",
+      "jxt": "d'",
+      "ingredient": "huile"
+    },
+    {
+      "amount": 8,
+      "unit": "feuille",
+      "jxt": "de",
+      "ingredient": "laitue"
+    },
+    {
+      "amount": 2,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "tomates"
+    },
+    {
+      "amount": 2,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "cornichons"
+    },
+    {
+      "amount": 4,
+      "unit": "",
+      "jxt": "",
+      "ingredient": "pains pour hamburgers aux graines de sésame"
+    },
+    {
+      "amount": 4,
+      "unit": "càc",
+      "jxt": "de",
+      "ingredient": "mayonnaise"
+    },
+    {
+      "amount": 1,
+      "unit": "càs",
+      "jxt": "de",
+      "ingredient": "moutarde"
+    },
+    {
+      "amount": 4,
+      "unit": "càc",
+      "jxt": "de",
+      "ingredient": "ketchup"
+    }
+  ]
+}

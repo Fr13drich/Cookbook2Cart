@@ -1,0 +1,114 @@
+{
+  "ref": "julieandrieu",
+  "name": "Salade César",
+  "ingredients_bill": [
+    {
+      "amount": 1,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "salade romaine"
+    },
+    {
+      "amount": 2,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "blancs de poulets déjà cuits"
+    },
+    {
+      "amount": 16,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "tranches fines de lard fumé"
+    },
+    {
+      "amount": 0.5,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "pain rassis sans croûte"
+    },
+    {
+      "amount": 1,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "herbes au choix : ciboulette, estragon, basilic, cerfeuil..."
+    },
+    {
+      "amount": 4,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "œufs bien frais"
+    },
+    {
+      "amount": 50,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "parmesan "
+    },
+    {
+      "amount": 15,
+      "unit": "g",
+      "jxt": "d'",
+      "ingredient": "anchois marinés à l'huile + 15 g de leur huile"
+    },
+    {
+      "amount": 1,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "jaune d'œuf"
+    },
+    {
+      "amount": 15,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "parmesan râpé"
+    },
+    {
+      "amount": 15,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "moutarde"
+    },
+    {
+      "amount": 15,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "crème liquide"
+    },
+    {
+      "amount": 15,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "vinaigre de cidre"
+    },
+    {
+      "amount": 1,
+      "unit": "càs",
+      "jxt": "de",
+      "ingredient": "worcestershire sauce"
+    },
+    {
+      "amount": 30,
+      "unit": "g",
+      "jxt": "d'",
+      "ingredient": "huile d'olive"
+    },
+    {
+      "amount": 15,
+      "unit": "g",
+      "jxt": "d'",
+      "ingredient": "huile de colza"
+    },
+    {
+      "amount": 0.3,
+      "unit": "gousse",
+      "jxt": "d'",
+      "ingredient": "ail"
+    },
+    {
+      "amount": 1,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "poivre"
+    }
+  ]
+}

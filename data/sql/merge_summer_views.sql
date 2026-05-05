@@ -1,7 +1,7 @@
 with views as (
-SELECT * FROM decembre UNION ALL
-SELECT * FROM janvier UNION ALL
-SELECT * FROM fevrier
+SELECT * FROM juin UNION ALL
+SELECT * FROM juillet UNION ALL
+SELECT * FROM aout
 ),
 menus as (
 SELECT recipes.id as recipe_id, recipes.name as recipe_name, views.multiplier as multiplier from recipes
