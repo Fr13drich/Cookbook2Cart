@@ -15,8 +15,9 @@ Cookbook2Cart is an intelligent tool that transforms scanned cookbook recipes in
 - Python 3.8+
 - Install dependencies:
   ```sh
-  pip install -r requirements.txt
   python -m spacy download fr_core_news_md
+  pip install -r requirements.txt
+  
   # For web interface:
   pip install fastapi uvicorn
   ```
