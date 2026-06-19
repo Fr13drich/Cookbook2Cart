@@ -1,0 +1,18 @@
+{
+  "ref": "Valèrie",
+  "name": "Artichauts vinaigrette",
+  "ingredients_bill": [
+    {
+      "amount": 1,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "artichaut"
+    },
+    {
+      "amount": 100,
+      "unit": "ml",
+      "jxt": "de",
+      "ingredient": "vinaigrette"
+    }
+  ]
+}
