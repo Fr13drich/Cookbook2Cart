@@ -26,7 +26,7 @@ def create_tables():
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS recipes (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                ref TEXT NOT NULL UNIQUE,
+                ref TEXT NOT NULL,
                 name TEXT NOT NULL,
                 notes TEXT DEFAULT NULL
     )''')
@@ -62,7 +62,7 @@ def insert_recipe(ref, name):
     """Insert a new recipe into the database."""
     print(f"Inserting recipe: {ref} - {name}")
     # Check if the recipe already exists
-    cursor.execute('SELECT id FROM recipes WHERE ref = ?', (ref,))
+    cursor.execute('SELECT id FROM recipes WHERE ref = ? and name = ?', (ref, name))
     existing = cursor.fetchone()
     if existing:
         print(f"Recipe already exists: {ref} - {name}")
@@ -200,7 +200,7 @@ if __name__ == '__main__':
     #         load_ingredients_from_file(os.path.join(_root, name))
     # json2sqlite(location='./test/test_results/')
     # Commit the changes and close the connection
-    show_data()
+    # show_data()
     conn.commit()
     conn.close()
     print("Database setup complete.")

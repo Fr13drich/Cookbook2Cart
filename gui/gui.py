@@ -9,7 +9,7 @@ import customtkinter
 
 DB_FILE = 'recipes.db'
 
-# Create a connection to the SQLite database (or create it if it doesn't exist)
+# Create a connection to the SQLite database
 conn = sqlite3.connect(DB_FILE)
 cursor = conn.cursor()
 config = configparser.ConfigParser()
@@ -181,7 +181,7 @@ class RecipesFrame(customtkinter.CTkFrame):
         self.master.ingredients_frame.merged_ingredients.delete("0.0", "end")
     def insert_menu_item(self, recipe_ref, recipe_name, multiplier=1.0):
         """Insert a menu item into the database."""
-        cursor.execute('SELECT id FROM recipes WHERE ref = ?', (recipe_ref,))
+        cursor.execute('SELECT id FROM recipes WHERE ref = ? AND name = ?', (recipe_ref, recipe_name))
         recipe_id = cursor.fetchone()
         if recipe_id:
             cursor.execute('INSERT INTO menu (recipe_id, multiplier) VALUES (?, ?)',
