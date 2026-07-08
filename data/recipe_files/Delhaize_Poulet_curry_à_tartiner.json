@@ -1,0 +1,60 @@
+{
+  "ref": "Delhaize",
+  "name": "Poulet curry à tartiner",
+  "ingredients_bill": [
+    {
+      "amount": 250,
+      "unit": "g",
+      "jxt": "de",
+      "ingredient": "filets de cuisse de poulet"
+    },
+    {
+      "amount": 1,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "jaune d'œuf"
+    },
+    {
+      "amount": 2,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "oignons blancs"
+    },
+    {
+      "amount": 2,
+      "unit": "càs",
+      "jxt": "de",
+      "ingredient": "jus de citron"
+    },
+    {
+      "amount": 1,
+      "unit": "càc",
+      "jxt": "de",
+      "ingredient": "moutarde"
+    },
+    {
+      "amount": 120,
+      "unit": "ml",
+      "jxt": "d'",
+      "ingredient": "huile de colza"
+    },
+    {
+      "amount": 1,
+      "unit": "càs",
+      "jxt": "d'",
+      "ingredient": "huile d'olive"
+    },
+    {
+      "amount": 2,
+      "unit": "càs",
+      "jxt": "de",
+      "ingredient": "curry"
+    },
+    {
+      "amount": 1,
+      "unit": "p",
+      "jxt": "",
+      "ingredient": "poivre"
+    }
+  ]
+}
